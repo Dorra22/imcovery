@@ -91,7 +91,7 @@ button {
 .btn-primary {
   border: none;
   color: #ffffff;
-  background: linear-gradient(#be1fc9 0%, #e52f7d 50%) !important;
+  background: linear-gradient(45deg, #be1fc9 0%, #e52f7d 50%) !important;
 }
 .btn-primary:hover {
   background: #0f3253 !important;
@@ -514,4 +514,7 @@ button {
 .ml-n1,
 .mx-n1 {
   margin-left: -0.25rem !important;
+}
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
 }

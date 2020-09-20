@@ -92,7 +92,7 @@ button {
 .btn-primary {
   border: none;
   color: #ffffff;
-  background: linear-gradient(#be1fc9 0%, #e52f7d 50%) !important;
+  background: linear-gradient(45deg, #be1fc9 0%, #e52f7d 50%) !important;
 }
 .btn-primary:hover {
   background: #0f3253 !important;
@@ -516,13 +516,16 @@ button {
 .mx-n1 {
   margin-left: -0.25rem !important;
 }
+.slick-dotted.slick-slider {
+  margin-bottom: 0;
+}
 html,
 body {
   overflow-x: hidden;
 }
 body {
   font-family: "Rubik", "Open Sans", "Helvetica Neue";
-  overflow-x: hidden;
+  overflow: hidden;
   width: 100%;
   color: #071828;
   background: #e4eaf2;
@@ -648,8 +651,8 @@ footer .btn-primary {
 }
 footer .copyright {
   margin-top: 4em;
-  font-size: 12px;
-  color: #be1fc9;
+  font-size: 14px;
+  color: #ffffff;
 }
 footer ul {
   margin: 0;
@@ -714,13 +717,18 @@ footer ul li a {
   width: 0px;
   opacity: 0;
 }
-#top {
+.one {
   background: url("../images/topleftbg.svg") 0 0 no-repeat;
   background-size: 100vmin;
   min-height: 100vh;
   width: 100%;
   position: relative;
   display: flex;
+}
+.slick-slide:first-child {
+  background: url("../images/topleftbg.svg") 0 0 no-repeat;
+  background-size: 100vmin;
+  min-height: 100vh;
 }
 #circles {
   /*animation: circleScale 2s ease-in infinite;*/
@@ -737,38 +745,59 @@ footer ul li a {
     transform: scale(0);
   }
 }
+main {
+  overflow: hidden;
+  width: 100%;
+}
 .citydiv {
   /* clip-path: url(#citymask);*/
   position: relative;
   top: 0px;
-  width: 100%;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
   display: flex;
-  align-items: center;
-  height: 50vh;
+  height: 100vh;
+  align-items: flex-start;
 }
 .city {
   position: absolute;
-  display: block;
-  left: -10%;
-  top: 50px;
-  z-index: 999;
+  top: 0px;
+  max-width: unset !important;
+  width: 200vmin;
+  left: 50%;
+  margin-left: -100vmin;
+  height: 200vmin;
+  top: 55vmin;
   animation: cog2 24s infinite linear;
 }
-#connectmessage {
-  position: relative;
-  z-index: 1090;
+.buttonrow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+h1 {
+  font-size: 20vmin;
 }
 #circle1,
 #circle2,
 #circle3,
-#circle4 {
+#circle4,
+#discover1,
+#discover2,
+#discover3,
+#discover4 {
   display: block;
   transform-box: fill-box;
   transform-origin: 50% 50%;
 }
+.section {
+  height: 100vh;
+}
 @keyframes cog2 {
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
 img {
@@ -778,16 +807,17 @@ img {
 .d-column {
   flex-direction: column;
 }
-#avatars {
-  right: 40%;
-  width: 40%;
+.avatars {
+  width: 100%;
   position: absolute;
   top: 0;
   z-index: 1007;
 }
-#girl {
+.girl {
+  margin-top: 20vmin;
   z-index: 1008;
-  transform: rotate(-25deg);
+  flex: 1 0 100%;
+  /*transform: rotate(-25deg)*/
 }
 #circles {
   position: relative;
@@ -802,95 +832,72 @@ img {
   transform-box: fill-box;
   transform-origin: 50% 50%;
 }
-#connect {
+.connect {
   position: relative;
   background: url("../images/pinkbg.svg") 50% 50% no-repeat;
   background-size: contain;
-  min-height: 100vh;
+  top: 0px;
   width: 100%;
-  margin-top: -30vmin;
-}
-#connect .message {
-  position: relative;
-  z-index: 1010;
-}
-#circleleft {
-  right: -30vmin;
-  top: 250px;
-  position: absolute;
-  display: block;
-  transform-origin: 50%;
-  transform-box: fill-box;
-  z-index: 999;
-  transform-origin: 50% 50%;
-  max-width: 100vmin;
-  height: 100vmin;
-  animation: cog2 24s infinite linear;
+  display: flex;
+  justify-content: flex-start;
 }
 .phone {
   position: relative;
   z-index: 1000;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  margin-top: 10vmin;
+  overflow: hidden;
+  order: 1;
+  justify-content: center;
+  width: 100%;
 }
-.phone img:nth-child(2) {
-  position: absolute;
-  left: 300px;
-}
-#discover {
-  min-height: 100vh;
-  z-index: 1091;
-}
-#discover .circle {
-  position: absolute;
-  background: #ffffff;
-  border-radius: 50%;
-  width: 150vmin;
-  height: 150vmin;
-}
-#discover .phone {
-  position: absolute;
-  top: 20vmin;
-}
-#discover #bench {
+.message {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  left: 200px;
+  z-index: 1010;
+  order: 2;
+  text-align: center;
 }
-#circles2 {
-  width: 50vmin;
-  left: 50vmin;
-  position: absolute;
-  z-index: 1092;
+.btn {
+  display: inline-flex;
+  flex: 1 1 100%;
+  justify-content: center;
 }
-#socialize {
+h2 {
+  font-size: 10vmin;
+}
+h4 {
+  font-size: 10vmin;
+}
+.screenshot {
+  display: none !important;
+}
+.discover {
+  position: relative;
+}
+.discover .bench {
+  width: 100%;
+  flex: 1 0 100%;
+}
+.circles2 {
+  margin-top: 10vmin;
+  flex: 0 0 70%;
+  position: relative;
+}
+.socialize {
   position: relative;
   background: url("../images/pinkbg.svg") 50% 50% no-repeat;
   background-size: contain;
-  min-height: 100vh;
   width: 100%;
-  z-index: 1094;
 }
-#socialize .phone {
-  right: 0;
-  position: absolute;
-}
-#socialize:before {
-  position: absolute;
-  content: "";
-  right: -30%;
-  display: block;
-  top: 0;
-  width: 50px;
-  height: auto;
-  background: url("../images/circle2.svg") 0 0 no-repeat;
-  background-size: contain;
-}
-#feelhome {
+.feelhome {
   position: relative;
 }
-#feelhome:before {
+.feelhome .logobg {
   position: absolute;
-  content: "";
   left: 0;
   display: block;
   top: 0;
@@ -904,11 +911,25 @@ img {
   max-width: 60% !important;
   height: auto;
 }
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 #circles3 {
   position: absolute;
 }
 .maintext {
   align-self: center;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 60vmax;
+  z-index: 1200;
+}
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 #navBar.show {
   top: 0;
@@ -930,4 +951,101 @@ img {
   color: #ffffff;
   padding: 3vw 5vw;
   font-size: 8.5vmin;
+}
+.contact {
+  background: #071828;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 2vmax;
+  align-text: center;
+}
+.contact h2 {
+  color: #ffffff;
+}
+.contact .form-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.gadgets {
+  position: absolute;
+  width: 100%;
+}
+.contact {
+  position: relative;
+  z-index: 89999;
+}
+@media (min-width: 769px) {
+  h2 {
+    font-size: 8vmin;
+  }
+  h4 {
+    font-size: 4vmin;
+  }
+  .citydiv {
+    height: unset;
+  }
+  .maintext {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    top: unset;
+    position: relative;
+  }
+  .girl {
+    top: unset;
+    margin-top: 10vmin;
+    z-index: 1008;
+    flex: 0 0 55%;
+    transform: rotate(-25deg);
+  }
+  header {
+    z-index: 999999;
+  }
+  .avatars {
+    width: 60%;
+  }
+  .city {
+    top: 35vmin;
+  }
+  section:focus {
+    outline: none !important;
+  }
+  .screenshot {
+    display: block !important;
+    position: absolute;
+    right: 0;
+  }
+  .message {
+    order: unset;
+  }
+  .phone {
+    order: unset;
+    overflow: unset;
+    min-height: 100vh;
+  }
+  .coffee {
+    flex: 0 0 80%;
+  }
+  .boy {
+    flex: 0 0 80%;
+  }
+  .contact {
+    margin-top: -60px;
+  }
+  .feelhome .girl {
+    transform: unset;
+    flex: 0 0 100%;
+  }
+  .discover .bench {
+    margin-left: 50px;
+    flex: 0 0 80%;
+  }
+  .discover .screenshot {
+    right: unset;
+    left: 0;
+  }
 }
