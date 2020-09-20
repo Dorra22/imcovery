@@ -634,6 +634,7 @@ h5 {
   }
 }
 footer {
+  background: #02080e !important;
   background: #071828;
   position: relative;
 }
@@ -650,9 +651,12 @@ footer .btn-primary {
   color: #071828 !important;
 }
 footer .copyright {
-  margin-top: 4em;
   font-size: 14px;
   color: #ffffff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 footer ul {
   margin: 0;
@@ -769,7 +773,7 @@ main {
   left: 50%;
   margin-left: -100vmin;
   height: 200vmin;
-  top: 55vmin;
+  top: 20vmin;
   animation: cog2 24s infinite linear;
 }
 .buttonrow {
@@ -784,10 +788,14 @@ h1 {
 #circle2,
 #circle3,
 #circle4,
-#discover1,
-#discover2,
-#discover3,
-#discover4 {
+#discover1_1_,
+#discover2_1_,
+#discover3_1_,
+#discover4_1_,
+#el1,
+#el2,
+#el3,
+#el4 {
   display: block;
   transform-box: fill-box;
   transform-origin: 50% 50%;
@@ -814,7 +822,7 @@ img {
   z-index: 1007;
 }
 .girl {
-  margin-top: 20vmin;
+  margin-top: 10vmin;
   z-index: 1008;
   flex: 1 0 100%;
   /*transform: rotate(-25deg)*/
@@ -883,13 +891,15 @@ h4 {
   flex: 1 0 100%;
 }
 .circles2 {
-  margin-top: 10vmin;
-  flex: 0 0 70%;
-  position: relative;
+  top: 0;
+  position: absolute;
+  flex: 0 0 80%;
+  width: 80%;
+  z-index: 3000;
 }
 .socialize {
   position: relative;
-  background: url("../images/pinkbg.svg") 50% 50% no-repeat;
+  background: url("../images/pinkbg2.svg") 50% 80% no-repeat;
   background-size: contain;
   width: 100%;
 }
@@ -972,13 +982,84 @@ section {
 }
 .gadgets {
   position: absolute;
-  width: 100%;
+  width: 80%;
+  left: 20%;
 }
 .contact {
   position: relative;
   z-index: 89999;
 }
-@media (min-width: 769px) {
+.form-control {
+  color: #ffffff !important;
+}
+.md-form input:not([type]):focus:not([readonly]),
+.md-form input[type=date]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=datetime]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=email]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=number]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=password]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=search-md]:focus:not([readonly]),
+.md-form input[type=search]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=tel]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=text]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=time]:not(.browser-default):focus:not([readonly]),
+.md-form input[type=url]:not(.browser-default):focus:not([readonly]),
+.md-form textarea.md-textarea:focus:not([readonly]) {
+  border-bottom: solid 1px #e52f7d !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+@media (min-width: 991px) {
+  .girl {
+    top: unset;
+    margin-top: 15vmin;
+    z-index: 1008;
+    flex: 0 0 55%;
+    transform: rotate(-25deg);
+  }
+  .discover .screenshot {
+    z-index: 4500;
+  }
+  main {
+    position: relative;
+  }
+  .bgcircle1 {
+    position: fixed;
+    width: 120vmin;
+    height: 120vmin;
+    right: -20%;
+    top: 50vh;
+  }
+  .bgcircle2 {
+    position: absolute;
+    width: 150vmin;
+    height: 150vmin;
+  }
+  .circles3 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20%;
+    z-index: 5000;
+  }
+  .feelhome .girl {
+    bottom: -100px;
+  }
+  .gadgets {
+    position: absolute;
+    width: 60%;
+    left: 25%;
+    top: -20%;
+    flex: 0 0 60%;
+  }
+  .buttonrow {
+    flex-wrap: nowrap;
+  }
+  .container-80 {
+    width: 80%;
+    max-width: 80% !important;
+  }
   h2 {
     font-size: 8vmin;
   }
@@ -995,13 +1076,6 @@ section {
     top: unset;
     position: relative;
   }
-  .girl {
-    top: unset;
-    margin-top: 10vmin;
-    z-index: 1008;
-    flex: 0 0 55%;
-    transform: rotate(-25deg);
-  }
   header {
     z-index: 999999;
   }
@@ -1009,7 +1083,10 @@ section {
     width: 60%;
   }
   .city {
-    top: 35vmin;
+    position: fixed;
+    top: 20vmin;
+    left: -10%;
+    margin-left: 0;
   }
   section:focus {
     outline: none !important;
@@ -1025,10 +1102,15 @@ section {
   .phone {
     order: unset;
     overflow: unset;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     min-height: 100vh;
+    margin-top: 0;
   }
   .coffee {
-    flex: 0 0 80%;
+    margin-left: 10%;
+    flex: 0 0 70%;
   }
   .boy {
     flex: 0 0 80%;
@@ -1038,14 +1120,20 @@ section {
   }
   .feelhome .girl {
     transform: unset;
-    flex: 0 0 100%;
+    flex: 0 0 80%;
   }
   .discover .bench {
-    margin-left: 50px;
-    flex: 0 0 80%;
+    margin-left: 30%;
+    flex: 0 0 70%;
   }
   .discover .screenshot {
     right: unset;
     left: 0;
+  }
+  .circles2 {
+    top: -5%;
+    width: 50%;
+    left: 45%;
+    z-index: 4600;
   }
 }

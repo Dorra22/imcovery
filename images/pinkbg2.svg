@@ -1,0 +1,10 @@
+<svg id="pinkbg2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="989" height="772" viewBox="0 0 989 772">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_1982" data-name="Rectangle 1982" width="989" height="772" transform="translate(563 2969)" fill="#fff" stroke="#707070" stroke-width="1"/>
+    </clipPath>
+  </defs>
+  <g id="Mask_Group_2" data-name="Mask Group 2" transform="translate(-563 -2969)" clip-path="url(#clip-path)">
+    <path id="Path_4089" data-name="Path 4089" d="M469.011,933.6c181.483-58.638,23.565-258.2,172.92-277.678S882.081,398.482,440.2,89.168,0,359.583,0,548.864,287.528,992.24,469.011,933.6Z" transform="matrix(0.326, -0.946, 0.946, 0.326, 510.547, 3545.298)" fill="#fef1f9"/>
+  </g>
+</svg>
