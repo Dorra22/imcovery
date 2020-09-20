@@ -1,6 +1,8 @@
 ﻿@import 'variables.less';
 @charset "utf-8";
-
+html {
+    scroll-behavior: smooth;
+}
 html, body {
     overflow-x: hidden;
 }
@@ -335,24 +337,31 @@ main{
   
 }
 
-.city {position:absolute;
-       top:0px;
-   max-width:unset !important;
-   width:200vmin;
-   left:50%;
-   margin-left:-100vmin;
-   height:200vmin;
-  top:20vmin;
-
-  
+.city {
+    position: absolute;
+    top: 0px;
+    max-width: unset !important;
+    width: 200vmin;
+    left: 50%;
+    margin-left: -100vmin;
+    height: 200vmin;
+    top: 20vmin;
+    -webkit-animation: cog2 24s infinite linear;
+    -moz-animation: cog2 24s infinite linear;
+    animation: NAME-YOUR-ANIMATION 5s infinite;
     animation: cog2 24s infinite linear;
-
 }
 .buttonrow{
 
     display:flex;
     flex-wrap:wrap;
     justify-content:center;
+
+    .btn{
+
+        display:flex;
+        justify-content:center;
+    }
 }
 
 h1{
@@ -378,10 +387,23 @@ h1{
         transform: rotate(-360deg)
     }
 }
+@-webkit-keyframes cog2 {
 
-img{
-    max-width:100% !important;
-    height:auto;
+    100% {
+        transform: rotate(-360deg)
+    }
+}
+@-moz-keyframes cog2 {
+
+    100% {
+        transform: rotate(-360deg)
+    }
+}
+
+
+
+img {
+    max-width:100% !important; height:auto;
 }
 
 .d-column{
@@ -496,8 +518,8 @@ h4{
     position: relative;
 
     
-        background: url("../images/pinkbg2.svg") 50% 80% no-repeat;
-        background-size: contain;
+        background: url("../images/pinkbg2.svg") 70% 80% no-repeat;
+        background-size: 50%;
    
 
     width: 100%;
@@ -530,7 +552,7 @@ section{
     justify-content:center;
 }
 
-#circles3{
+.circles3{
 
     position:absolute;
 }
@@ -614,9 +636,75 @@ section{
     box-shadow:none !important;
 }
 
+.bgcircle1 {
+    display: none;
+}
+.citydiv, .phone{
+
+    height:60vh !important;
+
+}
+.message, .maintext{
+
+    margin-top:0;
+    top:0;
+    position:relative !important;
+}
+.slick-dots {
+    position: fixed;
+    bottom: unset;
+    top:100vmin;
+    z-index: 4800;
+    display: block;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+
+    li {
+        position: relative;
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
 
 
+        button {
+            font-size: 0;
+            line-height: 0;
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: @greybg;
+            padding: 5px;
+            cursor: pointer;
+            color: transparent;
+            border: 0;
+            outline: 0;
+
+            &:before{
+
+                content:"";
+            }
+                
+        }
+
+        &.slick-active{
+            button{
+                background:@maincolor;
+            }
+        }
+    }
+}
 @media (min-width:991px) {
+
+   
     .girl {
         top: unset;
         margin-top: 15vmin;
@@ -776,4 +864,6 @@ section{
         left: 45%;
         z-index:4600;
     }
+
+    
 }
