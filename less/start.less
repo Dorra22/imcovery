@@ -26,7 +26,7 @@ header {
     flex-direction: column;
 
     .navbar-brand{
-        opacity:0;
+        opacity:1;
     }
     .header-section {
         margin-bottom: 30px;
@@ -62,7 +62,7 @@ header {
                 padding: 0;
 
                 img {
-                    max-width: 380px;
+                    max-width: 280px;
                 }
             }
         }
@@ -205,9 +205,10 @@ footer {background:darken(@darkbg, 6%) !important;
 
 .navbar-toggler {
     padding: 0;
-    z-index: 7777;
+    z-index: 199990;
     right:2%;
-    position:absolute;
+    position: absolute;
+
     #nav-icon {
         width: 40px;
         height: 50px;
@@ -248,15 +249,16 @@ footer {background:darken(@darkbg, 6%) !important;
     }
 
     &[aria-expanded="true"] {
-       
-            
-            
-            
-            #nav-icon {
 
-                span{
-                    color:@white;
-                }
+
+
+
+        #nav-icon {
+
+            span {
+                background: @white !important;
+            }
+
             span:nth-child(1) {
                 transform: rotate(45deg);
                 top: 6px;
@@ -264,7 +266,6 @@ footer {background:darken(@darkbg, 6%) !important;
 
             span:nth-child(3) {
                 transform: rotate(-45deg);
-                
             }
 
             span:nth-child(3) {
@@ -348,7 +349,7 @@ main{
     top: 20vmin;
     -webkit-animation: cog2 24s infinite linear;
     -moz-animation: cog2 24s infinite linear;
-    animation: NAME-YOUR-ANIMATION 5s infinite;
+    
     animation: cog2 24s infinite linear;
 }
 .buttonrow{
@@ -414,11 +415,11 @@ img {
   
     width:100%;
     position:absolute;
-    top:0;
+    top:10vmin;
     z-index:1007;
 }
 
-.girl {margin-top:10vmin;
+.girl {margin-top:5vmin;
     z-index: 1008;
     flex: 1 0 100%;
     /*transform: rotate(-25deg)*/
@@ -460,8 +461,8 @@ img {
     z-index: 1000;
     display: flex;
     flex-wrap:wrap;
-    align-items: center;
-    margin-top: 10vmin;
+    align-items: flex-start;
+    margin-top: 5vmin;
     overflow: hidden;
     order: 1;
     justify-content: center;
@@ -516,13 +517,13 @@ h4{
 
 .socialize {
     position: relative;
-
-    
-        background: url("../images/pinkbg2.svg") 70% 80% no-repeat;
-        background-size: 50%;
-   
-
+    background: url("../images/pinkbg2.svg") 70% 80% no-repeat;
+    background-size: 50%;
     width: 100%;
+
+     .phone {
+       align-items: center !important;
+    }
 }
 
 .feelhome {
@@ -582,7 +583,7 @@ section{
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1400;
+    z-index: 199400;
 
     .navbar-nav{
 
@@ -636,12 +637,11 @@ section{
     box-shadow:none !important;
 }
 
-.bgcircle1 {
-    display: none;
-}
+
 .citydiv, .phone{
 
-    height:60vh !important;
+    height:50vh;
+
 
 }
 .message, .maintext{
@@ -653,7 +653,7 @@ section{
 .slick-dots {
     position: fixed;
     bottom: unset;
-    top:100vmin;
+    top:95vmin;
     z-index: 4800;
     display: block;
     width: 100%;
@@ -667,8 +667,8 @@ section{
     li {
         position: relative;
         display: inline-block;
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
         margin: 0 5px;
         padding: 0;
         cursor: pointer;
@@ -678,10 +678,10 @@ section{
             font-size: 0;
             line-height: 0;
             display: block;
-            width: 20px;
-            height: 20px;
+            width: 16px;
+            height: 16px;
             border-radius: 50%;
-            background: @greybg;
+            background: @white;
             padding: 5px;
             cursor: pointer;
             color: transparent;
@@ -702,9 +702,18 @@ section{
         }
     }
 }
+.bgcircle{
+    display:none;
+}
 @media (min-width:991px) {
+    .bgcircle {display:flex;
+        position: fixed;
+        width: 110vmin;
+        height: 110vmin;
+        right: -20%;
+        top: -50vh;
+    }
 
-   
     .girl {
         top: unset;
         margin-top: 15vmin;
@@ -712,34 +721,29 @@ section{
         flex: 0 0 55%;
         transform: rotate(-25deg);
     }
-    .discover{
-        .screenshot{
-            z-index:4500;
+
+    .discover {
+        .screenshot {
+            z-index: 4500;
         }
     }
-    main{
-        position:relative;
+
+    main {
+        position: relative;
     }
-    .bgcircle1{
-        position:fixed;
-        width:120vmin;
-        height:120vmin;
-      right:-20%;
-      top:50vh;
-    }
+
     .bgcircle2 {
         position: absolute;
         width: 150vmin;
         height: 150vmin;
-       
     }
-    .circles3{
-        position:absolute;
 
-        left:0;
-        top:0;
-        width:20%;
-        z-index:5000;
+    .circles3 {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 20%;
+        z-index: 5000;
     }
 
     .feelhome {
@@ -751,7 +755,7 @@ section{
     .gadgets {
         position: absolute;
         width: 60%;
-        left:25%;
+        left: 25%;
         top: -20%;
         flex: 0 0 60%;
     }
@@ -779,13 +783,13 @@ section{
 
     .maintext {
         display: flex;
-        align-items: center;
+        align-items: center !important;
         flex-direction: column;
         top: unset;
         position: relative;
     }
 
-    
+
 
     header {
         z-index: 999999;
@@ -795,10 +799,11 @@ section{
         width: 60%;
     }
 
-    .city {position:fixed;
+    .city {
+        position: fixed;
         top: 20vmin;
-        left:-10%;
-        margin-left:0;
+        left: -10%;
+        margin-left: 0;
     }
 
 
@@ -862,8 +867,6 @@ section{
         top: -5%;
         width: 50%;
         left: 45%;
-        z-index:4600;
+        z-index: 4600;
     }
-
-    
 }
