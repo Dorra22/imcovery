@@ -995,6 +995,7 @@ section {
   flex-wrap: wrap;
   padding: 2vmax;
   align-text: center;
+  margin-top: 60px;
 }
 .contact h2 {
   color: #ffffff;
@@ -1308,8 +1309,8 @@ footer a:hover {
   .boy {
     flex: 0 0 100%;
   }
-  body,
-  html {
+  html,
+  body {
     overflow: hidden;
   }
   main section {
@@ -1360,7 +1361,7 @@ footer a:hover {
   .navbar-brand-fixed {
     display: flex;
     position: fixed;
-    top: 105vmin;
+    top: 60%;
     width: 200px;
     left: 50%;
     margin-left: -100px;
@@ -1369,36 +1370,29 @@ footer a:hover {
   .navbar-brand {
     display: none;
   }
+  .socialize {
+    position: relative;
+    background: url(../images/pinkbg2.svg) 60% 30% no-repeat;
+    background-size: 80%;
+    width: 100%;
+  }
   .message {
     top: unset;
-    bottom: 4%;
+    top: 70%;
     left: 0;
     position: absolute !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
   }
   .maintext {
-    bottom: 20px;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    top: 70%;
   }
   h2 {
-    font-size: 35px !important;
+    font-size: 28px !important;
   }
-}
-@media (max-width: 767px) and (min-height: 800px) {
-  .navbar-brand-fixed {
-    top: 125vmin;
+  h4 {
+    font-size: 18px;
   }
-  .message {
-    bottom: 8%;
-  }
-}
-h2 {
-  --minFontSize: 28px;
-  --maxFontSize: 45px;
-  --scaler: 10vw;
-  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
-}
-h4 {
-  --minFontSize: 18px;
-  --maxFontSize: 35px;
-  --scaler: 10vw;
-  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
 }
