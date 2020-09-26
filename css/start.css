@@ -603,7 +603,7 @@ header a {
 header a:hover {
   color: #be1fc9;
 }
-.homepage main {
+main {
   background: #e4eaf2;
   background-size: 100%;
   overflow: hidden;
@@ -1308,10 +1308,11 @@ footer a:hover {
   .boy {
     flex: 0 0 100%;
   }
-  body.homepage {
+  body,
+  html {
     overflow: hidden;
   }
-  .homepage main section {
+  main section {
     height: 100vh !important;
     overflow: hidden;
   }
