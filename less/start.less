@@ -15,7 +15,9 @@ body {
    background:@bgcolor;
 }
 
-
+a:hover, a:focus{
+    color:lighten(@maincolor, 10%);
+}
 #logoAndNav {
    
 }
@@ -27,6 +29,7 @@ header {
 
     .navbar-brand{
         opacity:1;
+        z-index:999;
     }
     .header-section {
         margin-bottom: 30px;
@@ -95,7 +98,7 @@ header {
         }
     }
 }
-main {
+.homepage main {
     background: @bgcolor;
     background-size:100%;
    
@@ -170,8 +173,8 @@ footer {background:darken(@darkbg, 6%) !important;
        
         font-size: 14px;
         color: @white;
-        text-align:center;
-        display:flex;
+        
+        display:inherit;
         justify-content:center;
         width:100%;
     }
@@ -355,7 +358,7 @@ main{
 .buttonrow{
 
     display:flex;
-    flex-wrap:wrap;
+
     justify-content:center;
 
     .btn{
@@ -370,7 +373,7 @@ h1{
     font-size:20vmin;
 }
 
-#circle1, #circle2, #circle3, #circle4, #discover1_1_, #discover2_1_, #discover3_1_, #discover4_1_,
+#avatar1, #avatar2, #avatar3, #avatar4, #discover1_1_, #discover2_1_, #discover3_1_, #discover4_1_,
 
 #el1, #el2, #el3, #el4{
     display: block;
@@ -653,7 +656,7 @@ section{
 .slick-dots {
     position: fixed;
     bottom: unset;
-    top:95vmin;
+    top: 95vmin;
     z-index: 4800;
     display: block;
     width: 100%;
@@ -666,11 +669,14 @@ section{
 
     li {
         position: relative;
-        display: inline-block;
-        width: 16px;
-        height: 16px;
+        display: inline-flex;
+        justify-content:center;
+        align-items:center;
+        width: 32px;
+        height: 32px;
         margin: 0 5px;
         padding: 0;
+        
         cursor: pointer;
 
 
@@ -682,22 +688,32 @@ section{
             height: 16px;
             border-radius: 50%;
             background: @white;
-            padding: 5px;
+            padding:5px;
             cursor: pointer;
             color: transparent;
             border: 0;
             outline: 0;
+            transition: all 0.3s;
+            transform: scale(1, 1);
 
-            &:before{
-
-                content:"";
+            &:before {
+                content: "";
             }
-                
         }
 
-        &.slick-active{
-            button{
-                background:@maincolor;
+        &:not(.slick-active) {
+            button {
+                transition: all 0.3s;
+                transform: scale(0.7, 0.7);
+                background: @white;
+            }
+        }
+
+        &.slick-active {
+            button {
+                transition: all 0.3s;
+                transform: scale(1.2, 1.2);
+                background: @maincolor;
             }
         }
     }
@@ -705,7 +721,25 @@ section{
 .bgcircle{
     display:none;
 }
+
+#thanks{
+    display:none;
+}
+a{
+    color:@maincolor;
+    font-weight:500;
+}
 @media (min-width:991px) {
+
+
+    .cityinside {
+        display: flex;
+        position: fixed;
+        width: 110vmin;
+        height: 110vmin;
+        left: -20%;
+       bottom: -50vh;
+    }
     .bgcircle {display:flex;
         position: fixed;
         width: 110vmin;
@@ -767,6 +801,8 @@ section{
     .container-80 {
         width: 80%;
         max-width: 80% !important;
+        display:flex;
+        align-items:center;
     }
 
     h2 {
@@ -833,11 +869,11 @@ section{
 
     .coffee {
         margin-left: 10%;
-        flex: 0 0 70%;
+        flex: 0 0 65%;
     }
 
     .boy {
-        flex: 0 0 80%;
+        flex: 0 0 70%;
     }
 
     .contact {
@@ -854,7 +890,7 @@ section{
     .discover {
         .bench {
             margin-left: 30%;
-            flex: 0 0 70%;
+            flex: 0 0 65%;
         }
 
         .screenshot {
@@ -869,4 +905,207 @@ section{
         left: 45%;
         z-index: 4600;
     }
+}
+
+#contactsection {
+    padding-top: 100px;
+    margin-top: -100px;
+}
+
+#connect {
+    padding-top: 100px;
+    margin-top: -100px;
+}
+footer a {
+    color: @white;
+
+    &:hover {
+        color: lighten(@maincolor, 10%);
+    }
+}
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show > .btn-primary.dropdown-toggle{
+
+    background-color:@secondarycolor !important;
+}
+
+.arrowtop {
+    background-color: @maincolor;
+    color: #fff;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+     opacity: 1;
+    position: absolute;
+    right: 42%;
+    z-index: 999999;
+    top: -10px;
+
+}
+@media (min-width: 991px) and (max-width:1280px) {
+
+    .girl {
+        top: unset;
+        margin-top: 5vmin;
+        z-index: 1008;
+        flex: 0 0 75%;
+        transform: rotate(-25deg);
+    }
+
+    .avatars {
+        top: -20%;
+        width: 80%;
+    }
+
+    .discover .bench {
+        margin-left: 40%;
+        flex: 0 0 70%;
+    }
+
+    .phone {
+        min-height: 80vh;
+    }
+}
+
+
+.navbar-brand-fixed{
+    display:none;
+}
+@media (max-width: 768px) {
+
+    .boy {
+        flex: 0 0 100%;
+    }
+
+    body.homepage {
+        overflow: hidden;
+    }
+
+   .homepage main section {
+        height: 100vh !important;
+        overflow: hidden;
+    }
+
+    .btn img {
+        max-width: 40% !important;
+        height: auto;
+    }
+
+    .message, .maintext {
+        top: unset;
+        bottom: 0;
+        left: 0;
+        position: absolute !important;
+    }
+
+    .buttonrow {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 1024px) and (orientation:landscape) {
+
+   
+
+
+    }
+
+
+.navbar-brand {
+    top: -10px;
+}
+
+@media (width: 768px) and (height:1024px){
+
+    .phone{
+        height:80vh;
+    }
+
+
+    .coffee{
+        flex:0 0 100%;
+    }
+    .boy {
+        flex: 0 0 90%;
+        margin-top:3vmin;
+    }
+    .message {
+
+        bottom:80px;
+    }
+    .maintext{
+
+        bottom:50px;
+    }
+    .buttonrow {
+        width: 100%;
+        flex-wrap: nowrap;
+    }
+}
+
+
+
+
+
+@media (max-width: 767px) and (min-height:680px) {
+
+    .navbar-brand-fixed {
+        display: flex;
+        position: fixed;
+        top: 105vmin;
+        width: 200px;
+        left: 50%;
+        margin-left: -100px;
+        z-index: 79999;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    .message {
+        top: unset;
+        bottom: 4%;
+        left: 0;
+        position: absolute !important;
+    }
+
+    .maintext{
+        bottom:20px;
+    }
+    h2{
+        font-size:35px !important;
+    }
+}
+
+@media (max-width: 767px) and (min-height:800px) {
+    .navbar-brand-fixed {
+        top: 125vmin;
+    }
+
+    .message {
+      
+        bottom: 8%;
+       
+    }
+
+}
+
+
+
+
+h2 {
+    --minFontSize: 28px;
+    --maxFontSize: 45px;
+    --scaler: 10vw;
+    font-size: clamp( var(--minFontSize), var(--scaler), var(--maxFontSize) );
+}
+
+h4 {
+    --minFontSize: 18px;
+    --maxFontSize: 35px;
+    --scaler: 10vw;
+    font-size: clamp( var(--minFontSize), var(--scaler), var(--maxFontSize) );
 }
