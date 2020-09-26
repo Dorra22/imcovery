@@ -471,10 +471,11 @@ img {
     justify-content: center;
     width: 100%;
 }
-.message {
+.message, .maintext {
     display:flex;
     flex-direction:column;
-    position: relative;
+    position: absolute;
+    top:62%;
     z-index: 1010;
     order: 2;
     text-align: center;
@@ -486,12 +487,12 @@ img {
     justify-content:center;
 }
 h2{
-    font-size:10vmin;
+    font-size:24px;
 
 }
 h4{
 
-    font-size:10vmin;
+    font-size:18px;
 }
 
 .screenshot {
@@ -561,15 +562,7 @@ section{
     position:absolute;
 }
 
-.maintext{
-    align-self:center;
-    position:absolute;
-    display:flex;
-    justify-content:center;
-  
-    top:60vmax;
-    z-index:1200;
-}
+
 .row{
     margin-left:0px;
     margin-right:0px;
@@ -647,16 +640,11 @@ section{
 
 
 }
-.message, .maintext{
 
-    margin-top:0;
-    top:0;
-    position:relative !important;
-}
 .slick-dots {
     position: fixed;
     bottom: unset;
-    top: 95vmin;
+    top: 55%;
     z-index: 4800;
     display: block;
     width: 100%;
@@ -806,11 +794,11 @@ a{
     }
 
     h2 {
-        font-size: 8vmin;
+        font-size: 24px;
     }
 
     h4 {
-        font-size: 4vmin;
+        font-size: 18px;
     }
 
     .citydiv {
@@ -995,12 +983,7 @@ footer a {
         height: auto;
     }
 
-    .message, .maintext {
-        top: unset;
-        bottom: 0;
-        left: 0;
-        position: absolute !important;
-    }
+    
 
     .buttonrow {
         flex-wrap: wrap;
@@ -1033,14 +1016,16 @@ footer a {
         flex: 0 0 90%;
         margin-top:3vmin;
     }
-    .message {
+    .message, .maintext {
 
-        bottom:80px;
+        top:82%;
     }
-    .maintext{
-
-        bottom:50px;
+    .slick-dots{
+        top:72%;
     }
+   h2{
+       font-size:2em;
+   }
     .buttonrow {
         width: 100%;
         flex-wrap: nowrap;
@@ -1074,7 +1059,7 @@ footer a {
     }
     .message {
         top: unset;
-        top: 70%;
+        top: 67%;
         left: 0;
         position: absolute !important;
         align-items: center !important;
@@ -1084,7 +1069,7 @@ footer a {
     .maintext {
         align-items: center !important;
         justify-content: flex-start !important;
-        top: 70%;
+        top: 67%;
     }
     h2{
         font-size:28px !important;
