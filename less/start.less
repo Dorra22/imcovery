@@ -6,10 +6,13 @@ html {
 html, body {
     overflow-x: hidden;
 }
+
+
+
 body {
     font-family: "Rubik", "Open Sans", "Helvetica Neue";
     
-    overflow: hidden;
+  
     width: 100%;
     color:@bodytext;
    background:@bgcolor;
@@ -63,9 +66,10 @@ header {
 
             .navbar-brand {opacity:1;
                 padding: 0;
+                margin-left:20px;
 
                 img {
-                    max-width: 280px;
+                    max-width: 180px !important;
                 }
             }
         }
@@ -477,6 +481,7 @@ img {
     position: absolute;
     top:62%;
     z-index: 1010;
+    left:0;
     order: 2;
     text-align: center;
 }
@@ -495,9 +500,7 @@ h4{
     font-size:18px;
 }
 
-.screenshot {
-    display: none !important;
-}
+
 .discover {
 
     position:relative;
@@ -712,12 +715,29 @@ section{
 
 #thanks{
     display:none;
+    color:@maincolor;
+    font-weight:bold;
+    font-size:18px;
+    margin-top:15px;
+
+    img{
+        max-width:100px !important;
+    }
+
 }
 a{
     color:@maincolor;
     font-weight:500;
 }
-@media (min-width:991px) {
+.screenshot {
+    display: none !important;
+}
+
+
+
+
+
+@media (min-width:767px) {
 
 
     .cityinside {
@@ -726,9 +746,11 @@ a{
         width: 110vmin;
         height: 110vmin;
         left: -20%;
-       bottom: -50vh;
+        bottom: -50vh;
     }
-    .bgcircle {display:flex;
+
+    .bgcircle {
+        display: flex;
         position: fixed;
         width: 110vmin;
         height: 110vmin;
@@ -777,8 +799,8 @@ a{
     .gadgets {
         position: absolute;
         width: 60%;
-        left: 25%;
-        top: -20%;
+        left: 10%;
+        top: -14%;
         flex: 0 0 60%;
     }
 
@@ -789,28 +811,28 @@ a{
     .container-80 {
         width: 80%;
         max-width: 80% !important;
-        display:flex;
-        align-items:center;
+        display: flex;
+        align-items: center;
     }
 
     h2 {
-        font-size: 24px;
+        font-size: 42px;
     }
 
     h4 {
-        font-size: 18px;
+        font-size: 28px;
     }
 
     .citydiv {
         height: unset;
     }
 
-    .maintext {
+    .maintext, .message {
         display: flex;
         align-items: center !important;
         flex-direction: column;
         top: unset;
-        position: relative;
+        position: relative !important;
     }
 
 
@@ -839,6 +861,7 @@ a{
         display: block !important;
         position: absolute;
         right: 0;
+        top: 0;
     }
 
     .message {
@@ -855,13 +878,20 @@ a{
         margin-top: 0;
     }
 
+    .socialize {
+
+        .screenshot {
+            right: -50px;
+        }
+    }
+
     .coffee {
-        margin-left: 10%;
-        flex: 0 0 65%;
+        margin-left: 0;
+        flex: 0 0 60%;
     }
 
     .boy {
-        flex: 0 0 70%;
+        flex: 0 0 85%;
     }
 
     .contact {
@@ -888,7 +918,6 @@ a{
     }
 
     .circles2 {
-        top: -5%;
         width: 50%;
         left: 45%;
         z-index: 4600;
@@ -922,17 +951,50 @@ footer a {
     width: 56px;
     height: 56px;
     border-radius: 50%;
-    display: flex !important;
+    display: flex;
     justify-content: center;
     align-items: center;
      opacity: 1;
     position: absolute;
-    right: 42%;
+   left: 50%;
+   margin-left:-28px;
     z-index: 999999;
     top: -10px;
 
 }
-@media (min-width: 991px) and (max-width:1280px) {
+
+@media (min-width: 767px) and (max-width:991px) {
+
+    main section {
+       
+        height:unset;
+        
+        padding-bottom:4em;
+    }
+    .phone {
+        min-height: unset;
+        height:unset;
+    }
+    .message, .maintext {
+       margin-top:4em;
+       position:relative;
+        justify-content:center;
+        align-items:center;
+        order:2;
+        top:unset;
+    }
+    .navbar-brand-fixed {
+        display: none;
+    }
+    .navbar-brand{
+        opacity:1;
+    }
+}
+
+
+
+
+@media (min-width: 767px) and (max-width:1280px) {
 
     .girl {
         top: unset;
@@ -943,7 +1005,7 @@ footer a {
     }
 
     .avatars {
-        top: -20%;
+      
         width: 80%;
     }
 
@@ -961,17 +1023,17 @@ footer a {
 .navbar-brand-fixed{
     display:none;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
 
     .boy {
         flex: 0 0 100%;
     }
 
-    html, body {
+    /* html, body {
         overflow: hidden;
 
         
-    }
+    }*/
 
     main section {
         height: 100vh !important;
@@ -985,9 +1047,7 @@ footer a {
 
     
 
-    .buttonrow {
-        flex-wrap: wrap;
-    }
+   
 }
 
 @media (max-width: 1024px) and (orientation:landscape) {
@@ -1002,33 +1062,53 @@ footer a {
     top: -10px;
 }
 
-@media (width: 768px) and (height:1024px){
-
-    .phone{
-        height:80vh;
+@media (max-width: 767px) and (max-height:720px) and (orientation:portrait){
+    .socialize {
+        position: relative;
+        background: url(../images/pinkbg2.svg) 60% 30% no-repeat;
+        background-size: 80%;
+        width: 100%;
     }
-
-
+    .phone, .citydiv{
+        height:40vh;
+      
+        margin-top:50px;
+    }
+   
     .coffee{
         flex:0 0 100%;
     }
     .boy {
-        flex: 0 0 90%;
-        margin-top:3vmin;
+        flex: 0 0 70%;
+      
+    }
+    .bench {
+        flex: 0 0 80%;
+    }
+    .girl {margin-top:unset;
+        flex: 0 0 80%;
     }
     .message, .maintext {
 
-        top:82%;
+        top:60%;
     }
     .slick-dots{
-        top:72%;
+        top:52%;
     }
    h2{
        font-size:2em;
    }
     .buttonrow {
         width: 100%;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+    }
+
+    .navbar-brand-fixed{
+        display:none;
+    }
+
+    .navbar-brand{
+        opacity:1;
     }
 }
 
@@ -1036,12 +1116,21 @@ footer a {
 
 
 
-@media (max-width: 767px) and (min-height:680px) {
+@media (max-width: 767px) and (min-height:721px) {
+    .buttonrow {
+        flex-wrap: wrap;
+    }
+    .phone, .citydiv {
+        height: 50vh;
+    }
 
+    .slick-dots{
+        top:51vh;
+    }
     .navbar-brand-fixed {
         display: flex;
         position: fixed;
-        top: 60%;
+        top: 55vh;
         width: 200px;
         left: 50%;
         margin-left: -100px;
@@ -1059,7 +1148,7 @@ footer a {
     }
     .message {
         top: unset;
-        top: 60%;
+        top: 63vh;
         left: 0;
         position: absolute !important;
         align-items: center !important;
@@ -1069,7 +1158,7 @@ footer a {
     .maintext {
         align-items: center !important;
         justify-content: flex-start !important;
-        top: 60%;
+        top: 63vh;
     }
     h2{
         font-size:28px !important;
@@ -1080,8 +1169,96 @@ footer a {
     }
 }
 
+@media (max-width:1280px) and (orientation:landscape){
+    .navbar-brand{
+        .img{
+            max-width:200px !important;
+        }
+    }
+}
 
 
 
 
+.md-form label.error.active {
+    position: relative !important;
+    transform: unset !important;
+    bottom: 10px;
+    color: @maincolor !important;
+}
 
+.md-form label.error {
+    position: relative !important;
+    transform: unset !important;
+    bottom: 10px;
+    color: @maincolor !important;
+}
+
+.md-form input:not([type]):focus:not([readonly]) + label,
+.md-form input[type="text"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="password"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="email"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="url"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="time"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="date"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="datetime"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="datetime-local"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="tel"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="number"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="search"]:not(.browser-default):focus:not([readonly]) + label,
+.md-form input[type="search-md"]:focus:not([readonly]) + label,
+.md-form textarea.md-textarea:focus:not([readonly]) + label {
+    color: @maincolor;
+}
+
+
+.md-form input:not([type]).valid, .md-form input:not([type]):focus.valid, .md-form input[type=date]:not(.browser-default).valid, .md-form input[type=date]:not(.browser-default):focus.valid, .md-form input[type=datetime-local]:not(.browser-default).valid, .md-form input[type=datetime-local]:not(.browser-default):focus.valid, .md-form input[type=datetime]:not(.browser-default).valid, .md-form input[type=datetime]:not(.browser-default):focus.valid, .md-form input[type=email]:not(.browser-default).valid, .md-form input[type=email]:not(.browser-default):focus.valid, .md-form input[type=number]:not(.browser-default).valid, .md-form input[type=number]:not(.browser-default):focus.valid, .md-form input[type=password]:not(.browser-default).valid, .md-form input[type=password]:not(.browser-default):focus.valid, .md-form input[type=search-md].valid, .md-form input[type=search-md]:focus.valid, .md-form input[type=search]:not(.browser-default).valid, .md-form input[type=search]:not(.browser-default):focus.valid, .md-form input[type=tel]:not(.browser-default).valid, .md-form input[type=tel]:not(.browser-default):focus.valid, .md-form input[type=text]:not(.browser-default).valid, .md-form input[type=text]:not(.browser-default):focus.valid, .md-form input[type=time]:not(.browser-default).valid, .md-form input[type=time]:not(.browser-default):focus.valid, .md-form input[type=url]:not(.browser-default).valid, .md-form input[type=url]:not(.browser-default):focus.valid, .md-form textarea.md-textarea.valid, .md-form textarea.md-textarea:focus.valid {
+    border-bottom: 1px solid yellow;
+    -webkit-box-shadow: 0 1px 0 0 yellow;
+    box-shadow: 0 1px 0 0 yellow;}
+
+@media (min-width:1440px) {
+    .avatars{
+        top:0;
+        margin-top:-200px;
+    }
+
+    .girl {
+       
+        margin-top: -100px;
+        z-index: 1008;
+        flex: 0 0 55%;
+        transform: rotate(-25deg);
+    }
+
+    .buttonrow{
+        margin-top:2em;
+    }
+    header .navbar-brand{
+        top:-4px;
+    }
+
+
+    header .navbar-brand img {
+        max-width: 180px !important;
+    }
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border: 1px solid green;
+    -webkit-text-fill-color: green;
+    -webkit-box-shadow: 0 0 0px 1000px #000 inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+input:-internal-autofill-selected{
+
+    background-color:yellow !important;
+}

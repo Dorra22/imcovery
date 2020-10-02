@@ -25,7 +25,7 @@ else $ip = getHostByAddr($REMOTE_ADDR);
 $subject=$name." new message from ".$siteaddress." subject:".$subject;
 $body= nl2br("You have 1 new message from ". $sitename."\r\n".
 "Name:". $first_name."\r\n".
-"Å-mail:".$email."\r\n".
+"E-mail:".$email."\r\n".
 "Message:"."\r\n".
 
 $message);
